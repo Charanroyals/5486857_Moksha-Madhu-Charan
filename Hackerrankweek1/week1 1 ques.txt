@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+void plusMinus(int numbers[], int size) {
+    int countPositive = 0, countNegative = 0, countZero = 0;
+
+    for (int k = 0; k < size; k++) {
+        if (numbers[k] > 0) {
+            countPositive++;
+        } else if (numbers[k] < 0) {
+            countNegative++;
+        } else {
+            countZero++;
+        }
+    }
+
+    double ratioPos = (double)countPositive / size;
+    double ratioNeg = (double)countNegative / size;
+    double ratioZero = (double)countZero / size;
+    
+    printf("%.6lf\n", ratioPos);
+    printf("%.6lf\n", ratioNeg);
+    printf("%.6lf\n", ratioZero);
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int data[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &data[i]);
+    }
+
+    plusMinus(data, n);
+
+    return 0;
+}
